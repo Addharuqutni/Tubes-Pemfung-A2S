@@ -3,6 +3,7 @@
 
 
 > npm i
+
 > python main.py
 
 
