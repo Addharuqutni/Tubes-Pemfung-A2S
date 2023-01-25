@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
+    <title>Hostpital</title>
+</head>
+<body class="dark:bg-gray-900">
+    <div class="flex-initial">
+        <nav class="bg-white border-gray-200 px-2 sm:px-4 py-2.5 rounded dark:bg-gray-900">
+            <div class="container flex flex-wrap items-center justify-between mx-auto">
+            <a href="#" class="flex items-center">
+                <img src="{{url_for('static',filename='/image/A2S.png')}}" class="h-6 mr-3 sm:h-9" alt="Logo" />
+            </a>
+            <div class="hidden w-full md:block md:w-auto" id="navbar-default">
+                <ul class="flex flex-col p-4 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:flex-row md:space-x-8 md:mt-0 md:text-sm md:font-medium md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
+                <li>
+                    <a href="/" class="block py-2 pl-3 pr-4 text-white bg-blue-700 rounded md:bg-transparent md:text-blue-700 md:p-0 dark:text-white" aria-current="page">Home</a>
+                </li>
+                <li>
+                    <a href="/cari-data/" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">Cari</a>
+                </li>
+                <li>
+                    <a href="/about" class="block py-2 pl-3 pr-4 text-gray-700 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 md:p-0 dark:text-gray-400 md:dark:hover:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">About</a>
+                </li>
+                </ul>
+            </div>
+            </div>
+        </nav>
+
+        <div id="controls-carousel" class="container mx-auto bg-white relative " data-carousel="dinamis">
+            <!-- Carousel wrapper -->
+            <div class="relative overflow-hidden rounded-lg md:h-96">
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{url_for('static',filename='/image/calcenter2.jpg')}}" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{url_for('static',filename='/image/jaga_jarak.png')}}" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+
+                <div class="hidden duration-700 ease-in-out" data-carousel-item>
+                    <img src="{{url_for('static',filename='/image/pakai_masker.png')}}" class="absolute block h-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+                </div>
+
+            </div>
+            <!-- Slider controls -->
+            <button type="button" class="absolute top-0 left-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-prev>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+                    <span class="sr-only">Previous</span>
+                </span>
+            </button>
+            <button type="button" class="absolute top-0 right-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none" data-carousel-next>
+                <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+                    <svg aria-hidden="true" class="w-6 h-6 text-white dark:text-gray-800" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+                    <span class="sr-only">Next</span>
+                </span>
+            </button>
+        </div>
+
+        <div class="w-full flex flex-col items-center justify-center py-24 space-y-14 ">
+            <div class="max-w-xl p-6">
+                <a href="#">
+                    <h1 class="mb-2 text-4xl font-semibold tracking-tight text-gray-900 dark:text-white">Rumah Sakit Rujukan Covid-19</h1>
+                </a>
+                <p class="mb-3 text-3xl font-normal text-gray-700 dark:text-gray-400">Indonesia</p>
+                <a href="/cari-data" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                    Cari Rumah Sakit
+                    <svg aria-hidden="true" class="w-4 h-4 ml-2 -mr-1" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z" clip-rule="evenodd"></path></svg>
+                </a>
+            </div>  
+        </div>
+
+        <div class="container mx-auto flex flex-row items-center justify-center pt-8 py-8"> 
+            <div class="grid grid-cols-4 gap-8 items-center mx-16">
+                {% for i in rs%}
+                <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+                    <a href="#">
+                        <h5 class="mb-2 text-2sm font-bold tracking-tight text-gray-900 dark:text-white">{{ i['name'] }}</h5>
+                    </a>
+                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['province'] }}</p>
+                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['address'] }}</p>
+                    <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                        {{ i['phone'] }}
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+            
+        </div>
+
+        <footer class="p-4 py-10 rounded-lg shadow md:flex md:items-center md:justify-between md:p-6 dark:bg-gray-800">
+            <span class="text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2023 <a href="#" class="hover:underline">A2S</a>. All Rights Reserved.
+            </span>
+            <ul class="flex flex-wrap items-center mt-3 text-sm text-gray-500 dark:text-gray-400 sm:mt-0">
+                <li>
+                    <a href="#" class="mr-4 hover:underline md:mr-6 ">About</a>
+                </li>
+                <li>
+                    <a href="#" class="hover:underline">Contact</a>
+                </li>
+            </ul>
+        </footer>
+    </div>
+
+    <script>
+        // On page load or when changing themes, best to add inline in `head` to avoid FOUC
+        if (localStorage.getItem('color-theme') === 'dark' || (!('color-theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark')
+        }
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flowbite/1.6.2/flowbite.min.js"></script>
+    <script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+</body>
+</html>
