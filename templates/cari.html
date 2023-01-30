@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{url_for('static',filename='dist/css/output.css')}}">
-    <title>Hostpital</title>
+    <title>PAHLAWAN NASIONAL INDONESIA</title>
 </head>
 <body class="dark:bg-gray-900">
     <div class="overscroll-none">
@@ -32,8 +32,8 @@
 
         <div class="w-full flex flex-row items-center justify-center">
             <div class="flex flex-col mt-10">
-                <h1 class="text-4xl font-semibold dark:text-white">Rumah Sakit Rujukan COVID-19</h1>
-                <h1 class="text-3xl text-center font-semibold dark:text-white">Indonesia</h1>
+                <h1 class="text-4xl font-semibold dark:text-white">DAFTAR TOKOH PAHLAWAN NASIONAL</h1>
+                <h1 class="text-3xl text-center font-semibold dark:text-white">INDONESIA</h1>
             </div>
         </div>
         
@@ -43,7 +43,7 @@
                     <div class="flex-auto">
                     </div>
                     <div class="flex-auto w-64 items-center justify-center">
-                        <input type="text" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" name="cari" placeholder="Provinsi...">     
+                        <input type="text" class="bg-gray-100 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-gray-400 dark:focus:ring-blue-500 dark:focus:border-blue-500" name="cari" placeholder="Nama Lengkap Tokoh...">     
                     </div>
                     <div class="flex-auto pl-5">
                         <button type="submit" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Cari</button>
@@ -54,14 +54,13 @@
 
         <div class="w-full max-h-full pt-8 py-8"> 
             <div class="grid grid-cols-4 gap-8 items-center mx-16">
-                {% for i in rs%}
+                {% for i in phlwn%}
                 <div class="max-w-sm p-6 bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                     <a href="#">
                         <h5 class="mb-2 text-2sm font-bold tracking-tight text-gray-900 dark:text-white">{{ i['name'] }}</h5>
                     </a>
-                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['province'] }}</p>
-                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['address'] }}</p>
-                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['phone'] }}</p>
+                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['birth_year'] }} - {{ i['death_year'] }}</p>
+                    <p class="mb-2 font-normal text-gray-700 dark:text-gray-400">{{ i['description'] }}</p>
                 </div>
                 {% endfor %}
             </div>

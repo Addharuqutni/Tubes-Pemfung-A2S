@@ -4,30 +4,30 @@ from flask import Flask, render_template, url_for, request
 
 
 app = Flask(__name__, template_folder='templates')
-data = requests.get('https://dekontaminasi.com/api/id/covid19/hospitals').json()
+data = requests.get('https://indonesia-public-static-api.vercel.app/api/heroes').json()
 
-prov = []
+name = []
 for i in data:
-    prov.append(i['province'])
+    name.append(i['name'])
 
 @app.route('/')
 def home():
-    return render_template('homepages.html', rs = data, judul = 'Home')
+    return render_template('homepages.html', phlwn = data, judul = 'Home')
 
 @app.route('/cari', methods = ['POST', 'GET'])
 def cari():
     if request.method == 'POST':
         cari = request.form['cari']
-        new_list = list(filter(lambda x: (x['province'] == cari), data))
-        return render_template('cari.html', rs = new_list, judul='Cari Data')
+        new_list = list(filter(lambda x: (x['name'] == cari), data))
+        return render_template('cari.html', phlwn = new_list, judul='Cari Data')
     else:
         cari = request.args.get('cari')
         return render_template('cari.html')
     
 @app.route('/cari-data/')
 def caridata():
-    q = set(prov)
-    p = list(map(lambda x: 'Provinsi ' + x, sorted(q)))
+    q = set(name)
+    p = list(map(lambda x: x, sorted(q)))
     return render_template('homecari.html', x=p, judul='Cari Data')
 
 @app.route('/about')
