@@ -18,7 +18,7 @@ def home():
 def cari():
     if request.method == 'POST':
         cari = request.form['cari']
-        new_list = list(filter(lambda x: (x['name'] == cari), data))
+        new_list = list(filter(lambda x: (cari in x['name']), data))
         return render_template('cari.html', phlwn = new_list, judul='Cari Data')
     else:
         cari = request.args.get('cari')
